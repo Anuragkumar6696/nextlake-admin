@@ -122,8 +122,8 @@ const AddBlog = ({
       );
 
       const url = existingBlog
-        ? `${process.env.NEXT_PUBLIC_API_URL}/blog/${existingBlog.slug}`
-        : `${process.env.NEXT_PUBLIC_API_URL}/blog/add`;
+        ? `${process.env.NEXT_PUBLIC_API_URL}/api/blog/${existingBlog.slug}`
+        : `${process.env.NEXT_PUBLIC_API_URL}/api/blog/add`;
 
       const method = existingBlog ? "PUT" : "POST";
 

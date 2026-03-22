@@ -22,21 +22,6 @@ const menu = [
     icon: LayoutDashboard,
   },
   {
-    name: "Leads",
-    href: "/admin/leads",
-    icon: Users,
-  },
-  {
-    name: "Enquire Leads",
-    href: "/admin/enquireLead",
-    icon: Mail,
-  },
-  {
-    name: "Property",
-    href: "/admin/property",
-    icon: Home,
-  },
-  {
     name: "Blogs",
     href: "/admin/blogs",
     icon: FileText,
@@ -118,7 +103,7 @@ export default function AdminSidebar() {
       <div className="px-6 py-6 bg-gradient-to-r from-purple-600 to-indigo-500 text-white">
         <h2 className="text-2xl font-extrabold tracking-wide">Admin Panel</h2>
         <p className="text-sm mt-1 font-medium text-gray-200">
-          Shivaksh Management
+          NextLake Admin
         </p>
       </div>
 
