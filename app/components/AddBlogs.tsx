@@ -121,9 +121,10 @@ const AddBlog = ({
         blogData.append("schemaMarkup", schema)
       );
 
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "https://nextlakelabs-backened.onrender.com";
       const url = existingBlog
-        ? `${process.env.NEXT_PUBLIC_API_URL}/api/blog/${existingBlog.slug}`
-        : `${process.env.NEXT_PUBLIC_API_URL}/api/blog/add`;
+        ? `${apiUrl}/api/blog/${existingBlog.slug}`
+        : `${apiUrl}/api/blog/add`;
 
       const method = existingBlog ? "PUT" : "POST";
 

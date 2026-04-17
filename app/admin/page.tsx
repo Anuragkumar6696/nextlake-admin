@@ -23,8 +23,9 @@ export default function AdminDashboardPage() {
     useEffect(() => {
         async function load() {
             try {
+                const apiUrl = process.env.NEXT_PUBLIC_API_URL || "https://nextlakelabs-backened.onrender.com";
                 const res = await fetch(
-                    `${process.env.NEXT_PUBLIC_API_URL}/api/blog/viewblog`
+                    `${apiUrl}/api/blog/viewblog`
                 );
                 const data = await res.json();
                 

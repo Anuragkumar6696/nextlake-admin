@@ -41,7 +41,8 @@ export default function AdminBlogsPage() {
   const fetchBlogs = async () => {
     setLoading(true);
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blog/viewblog`);
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "https://nextlakelabs-backened.onrender.com";
+      const res = await fetch(`${apiUrl}/api/blog/viewblog`);
       const data = await res.json();
       
       // Handle different response formats
@@ -78,7 +79,8 @@ export default function AdminBlogsPage() {
   const handleDelete = async (slug: string) => {
     if (!confirm("Are you sure you want to delete this blog? This action cannot be undone.")) return;
     try {
-      await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blog/${slug}`, {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "https://nextlakelabs-backened.onrender.com";
+      await fetch(`${apiUrl}/api/blog/${slug}`, {
         method: "DELETE",
       });
       fetchBlogs();
@@ -101,7 +103,8 @@ export default function AdminBlogsPage() {
     formData.append("coverImage", selectedImage);
 
     try {
-      await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blog/${editingSlug}/image`, {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "https://nextlakelabs-backened.onrender.com";
+      await fetch(`${apiUrl}/api/blog/${editingSlug}/image`, {
         method: "PATCH",
         body: formData,
       });
@@ -388,7 +391,8 @@ export default function AdminBlogsPage() {
               </button>
               <button
                 onClick={async () => {
-                  await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blog/${editingSlug}`, {
+                  const apiUrl = process.env.NEXT_PUBLIC_API_URL || "https://nextlakelabs-backened.onrender.com";
+                  await fetch(`${apiUrl}/api/blog/${editingSlug}`, {
                     method: "PATCH",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ content: htmlContent }),
